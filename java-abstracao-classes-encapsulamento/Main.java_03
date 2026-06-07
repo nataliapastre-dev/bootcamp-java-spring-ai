@@ -1,0 +1,35 @@
+public class Main {
+    public static void main(String[] args) {
+
+        MaquinaBanho maquina = new MaquinaBanho();
+
+        // 💧 Abastecendo água
+        maquina.abastecerAgua();
+        maquina.abastecerAgua();
+        maquina.abastecerAgua();
+
+        // 🧴 Abastecendo shampoo
+        maquina.abastecerShampoo();
+        maquina.abastecerShampoo();
+
+        // 🐶 Colocando pet
+        maquina.colocarPet();
+
+        // 🛁 Dando banho
+        maquina.darBanho();
+
+        // 📊 Verificando estado
+        maquina.verificarAgua();
+        maquina.verificarShampoo();
+        maquina.verificarPet();
+
+        // 🐶 Retirando pet
+        maquina.retirarPet();
+
+        // 🧽 Limpando máquina
+        maquina.limparMaquina();
+
+        // 🐶 Novo pet
+        maquina.colocarPet();
+    }
+}
