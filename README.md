@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 </p>
 
-## 📖 Sobre o Projeto
+## 📖 Sobre o Repositório
 
 Este repositório foi criado para armazenar os exercícios, desafios e projetos desenvolvidos durante o **Bootcamp NTT DATA: Backend Java com Spring AI**.
 
