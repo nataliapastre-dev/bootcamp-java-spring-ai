@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Biblioteca livro = new Biblioteca("O Alquimista", "Paulo Coelho");
+
+        System.out.println("📚 SISTEMA DE BIBLIOTECA\n");
+
+        livro.exibirInfo();
+
+        System.out.println("\n--- Ações ---\n");
+
+        livro.emprestarLivro();
+        livro.verificarStatus();
+
+        livro.emprestarLivro(); // tentativa inválida
+
+        livro.devolverLivro();
+        livro.verificarStatus();
+    }
+}
