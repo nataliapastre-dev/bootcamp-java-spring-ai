@@ -1,0 +1,116 @@
+public class MaquinaBanho {
+
+    private int agua = 0;
+    private int shampoo = 0;
+    private boolean temPet = false;
+    private boolean petLimpo = false;
+
+    private final int MAX_AGUA = 30;
+    private final int MAX_SHAMPOO = 10;
+
+    // 🐶 Colocar pet na máquina
+    public void colocarPet() {
+        if (temPet) {
+            System.out.println("❌ Já existe um pet na máquina!");
+            return;
+        }
+
+        if (!petLimpo && (agua > 0 || shampoo > 0)) {
+            System.out.println("❌ Máquina suja! Precisa limpar antes de outro pet.");
+            return;
+        }
+
+        temPet = true;
+        petLimpo = false;
+
+        System.out.println("🐶 Pet colocado na máquina.");
+    }
+
+    // 🐶 Retirar pet
+    public void retirarPet() {
+        if (!temPet) {
+            System.out.println("❌ Não há pet na máquina.");
+            return;
+        }
+
+        temPet = false;
+
+        if (!petLimpo) {
+            System.out.println("⚠ Pet retirado sem banho completo! Limpe a máquina.");
+        } else {
+            System.out.println("✅ Pet retirado limpo!");
+        }
+    }
+
+    // 🛁 Dar banho no pet
+    public void darBanho() {
+        if (!temPet) {
+            System.out.println("❌ Nenhum pet na máquina.");
+            return;
+        }
+
+        if (agua < 10 || shampoo < 2) {
+            System.out.println("❌ Recursos insuficientes para o banho.");
+            return;
+        }
+
+        agua -= 10;
+        shampoo -= 2;
+        petLimpo = true;
+
+        System.out.println("🛁 Banho realizado com sucesso!");
+    }
+
+    // 💧 Abastecer água (2L por vez)
+    public void abastecerAgua() {
+        if (agua + 2 <= MAX_AGUA) {
+            agua += 2;
+            System.out.println("💧 Água: " + agua + "L");
+        } else {
+            System.out.println("❌ Capacidade máxima de água atingida!");
+        }
+    }
+
+    // 🧴 Abastecer shampoo (2L por vez)
+    public void abastecerShampoo() {
+        if (shampoo + 2 <= MAX_SHAMPOO) {
+            shampoo += 2;
+            System.out.println("🧴 Shampoo: " + shampoo + "L");
+        } else {
+            System.out.println("❌ Capacidade máxima de shampoo atingida!");
+        }
+    }
+
+    // 📊 Verificar nível de água
+    public int verificarAgua() {
+        System.out.println("💧 Nível de água: " + agua + "L");
+        return agua;
+    }
+
+    // 📊 Verificar nível de shampoo
+    public int verificarShampoo() {
+        System.out.println("🧴 Nível de shampoo: " + shampoo + "L");
+        return shampoo;
+    }
+
+    // 🐶 Verificar se tem pet
+    public boolean verificarPet() {
+        System.out.println(temPet ? "🐶 Tem pet na máquina" : "❌ Sem pet na máquina");
+        return temPet;
+    }
+
+    // 🧽 Limpar máquina
+    public void limparMaquina() {
+
+        if (agua < 3 || shampoo < 1) {
+            System.out.println("❌ Recursos insuficientes para limpeza.");
+            return;
+        }
+
+        agua -= 3;
+        shampoo -= 1;
+        petLimpo = true;
+
+        System.out.println("🧽 Máquina limpa e pronta para uso!");
+    }
+}
